@@ -1,0 +1,67 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KAMPS ChatBot</title>
+    <!-- Latest compiled and minified CSS -->
+{#    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">#}
+    <link rel="stylesheet" href="{% static 'kamps.css' %}">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container clearfix">
+    <div class="chat">
+        <div class="chat-history" id="msg-list-div" >
+
+            <ul id="msg-list" class="chat-ul">
+                <li> <h2>KAMPS ~questions answered fast~ </h2></li>
+                {% for obj in chat %}
+                    {% if obj.user == request.user %}
+                        <li class="clearfix">
+                            <div class="message-data align-right">
+                                <span class="message-data-name"><i class="fa fa-circle you"></i> c.user.username </span>
+                             </div>
+                            <div class="float-right message you-message">{{ obj.message }}</div>
+                        </li>
+                    {% else %}
+                        <li class="clearfix">
+                            <div class="message-data">
+                                <span class="message-data-name"><i class="fa fa-circle me"></i>KAMPS</span>
+                            </div>
+                            <div class="message me-message">{{ obj.message }}</div>
+                        </li>
+                    {% endif %}
+                {% empty %}
+                    <li class="float-right">No messages yet!</li>
+                {% endfor %}
+                <script>
+                    var chatlist = document.getElementById('msg-list-div');
+                    chatlist.scrollTop = chatlist.scrollHeight;
+                </script>
+            </ul>
+
+        </div> <!-- end chat-history -->
+
+     <div class="chat-box">
+         <form id="chat-form" method="post" action="/post/">
+             <div id="chat-bottom" class="input-group">
+                 <input type="text" id="chat-msg" name="chat-msg" class="form-control"/>
+                 <span class="input-group-btn">
+                <input class="btn btn-default" id="send" type="submit" value="Send"/>
+            </span>
+             </div>
+         </form>
+     </div>
+    </div> <!-- end chat -->
+</div>
+
+</body>
+<script src="{% static 'chat.js' %}"></script>
+</html>

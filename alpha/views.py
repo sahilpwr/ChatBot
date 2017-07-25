@@ -28,7 +28,8 @@ def Logout(request):
 
 def Home(request):
     c = Chat.objects.all()
-    return render(request, "alpha/home.html", {'home': 'active', 'chat': c})
+    # return render(request, "alpha/home.html", {'home': 'active', 'chat': c})
+    return render(request, "beta/kamps.html", {'home': 'active', 'chat': c})
 
 def Post(request):
     if request.method == "POST":

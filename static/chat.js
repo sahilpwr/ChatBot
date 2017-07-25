@@ -8,7 +8,11 @@ $('#chat-form').on('submit', function(event){
 
         success : function(json){
             $('#chat-msg').val('');
-            $('#msg-list').append('<li class="text-right list-group-item">' + json.msg + '</li>');
+            $('#msg-list').append('<li class="clearfix"><div class="message-data align-right"><span class="message-data-name"><i class="fa fa-circle you"></i> c.user.username </span> </div>');
+            $('#msg-list').append('<div class="float-right message you-message">' + json.msg + '</div>'+'</li>');
+            //jump to back end
+            $('#msg-list').append('<li class="clearfix"><div class="message-data" ><span class="message-data-name" style="position:relative"><i class="fa fa-circle me"></i>KAMPS</span></div>');
+            $('#msg-list').append('<div class="message me-message">Let me think about it....</div></li>');
             var chatlist = document.getElementById('msg-list-div');
             chatlist.scrollTop = chatlist.scrollHeight;
         }
@@ -31,7 +35,7 @@ $(function(){
     $('#msg-list-div').on('scroll', function(){
         scrolling = true;
     });
-    refreshTimer = setInterval(getMessages, 500);
+    refreshTimer = setInterval(getMessages, 500000);
 });
 
 $(document).ready(function() {
