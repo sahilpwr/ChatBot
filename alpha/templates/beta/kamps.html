@@ -27,17 +27,18 @@
                         {% if obj.user == request.user %}
                             <li class="clearfix">
                                 <div class="message-data align-right">
-                                    <span class="message-data-name"><i class="fa fa-circle you"></i> c.user.username </span>
+                                    <span class="message-data-name"><i class="fa fa-circle you"></i> {{ obj.user }} </span>
                                  </div>
                                 <div class="float-right message you-message">{{ obj.message }}</div>
+
                             </li>
-                        {% else %}
                             <li class="clearfix">
                                 <div class="message-data">
                                     <span class="message-data-name"><i class="fa fa-circle me"></i>KAMPS</span>
                                 </div>
-                                <div class="message me-message">{{ obj.message }}</div>
+                                <div class="message me-message">{{ obj.reply }}</div>
                             </li>
+
                         {% endif %}
                     {% empty %}
                         <li class="float-right">No messages yet!</li>

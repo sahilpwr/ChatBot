@@ -34,10 +34,11 @@ def Home(request):
 def Post(request):
     if request.method == "POST":
         msg = request.POST.get('msgbox', None)
-        c = Chat(user=request.user, message=msg)
+        rly=request.POST.get('rlybox', None)
+        c = Chat(user=request.user, message=msg, reply=rly)
         if msg != '':
             c.save()
-        return JsonResponse({ 'msg': msg, 'user': c.user.username })
+        return JsonResponse({ 'msg': msg, 'user': c.user.username, 'rly':rly })
     else:
         return HttpResponse('Request must be POST.')
 

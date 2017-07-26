@@ -1,43 +1,44 @@
 $('#chat-form').on('submit', function(event){
     event.preventDefault();
+    reply="Let me think about it....";
 
     $.ajax({
         url : '/post/',
         type : 'POST',
-        data : { msgbox : $('#chat-msg').val() },
+        data : { msgbox : $('#chat-msg').val() , rlybox:reply},
 
         success : function(json){
             $('#chat-msg').val('');
-            $('#msg-list').append('<li class="clearfix"><div class="message-data align-right"><span class="message-data-name"><i class="fa fa-circle you"></i> c.user.username </span> </div>');
+            $('#msg-list').append('<link rel="stylesheet" href="kamps.css" >');
+            $('#msg-list').append('<li class="clearfix"><div class="message-data align-right"><span class="message-data-name"><i class="fa fa-circle you"></i>'+json.user+'</span> </div>');
             $('#msg-list').append('<div class="float-right message you-message">' + json.msg + '</div>'+'</li>');
             //jump to back end
-            $('#msg-list').append('<li class="clearfix"><div class="message-data" ><span class="message-data-name" style="position:relative"><i class="fa fa-circle me"></i>KAMPS</span></div>');
-            $('#msg-list').append('<div class="message me-message">Let me think about it....</div></li>');
-
+            $('#msg-list').append('<li class="clearfix"><div class="message-data" ><span class="message-data-name" style="position:relative"><i class="fa fa-circle me"></i>KAMPS</span></div>'+'<div class="message me-message">'+json.rly+'</div></li>');
+            // $('#msg-list').append('<div class="message me-message">'+json.rly+'</div></li>');
             // var chatlist = document.getElementById('body');
             document.body.scrollTop = document.body.scrollHeight;
         }
     });
 });
 
-function getMessages(){
-    if (!scrolling) {
-        $.get('/messages/', function(messages){
-            $('#msg-list').html(messages);
-            var chatlist = document.getElementById('msg-list-div');
-            chatlist.scrollTop = chatlist.scrollHeight;
-        });
-    }
-    scrolling = false;
-}
-
-var scrolling = false;
-$(function(){
-    $('#msg-list-div').on('scroll', function(){
-        scrolling = true;
-    });
-    refreshTimer = setInterval(getMessages, 500000);
-});
+// function getMessages(){
+//     if (!scrolling) {
+//         $.get('/messages/', function(messages){
+//             $('#msg-list').html(messages);
+//             var chatlist = document.getElementById('msg-list-div');
+//             chatlist.scrollTop = chatlist.scrollHeight;
+//         });
+//     }
+//     scrolling = false;
+// }
+//
+// var scrolling = false;
+// $(function(){
+//     $('#msg-list-div').on('scroll', function(){
+//         scrolling = true;
+//     });
+//      refreshTimer = setInterval(getMessages, 1500);
+// });
 
 $(document).ready(function() {
      $('#send').attr('disabled','disabled');
