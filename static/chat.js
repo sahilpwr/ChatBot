@@ -13,8 +13,9 @@ $('#chat-form').on('submit', function(event){
             //jump to back end
             $('#msg-list').append('<li class="clearfix"><div class="message-data" ><span class="message-data-name" style="position:relative"><i class="fa fa-circle me"></i>KAMPS</span></div>');
             $('#msg-list').append('<div class="message me-message">Let me think about it....</div></li>');
-            var chatlist = document.getElementById('msg-list-div');
-            chatlist.scrollTop = chatlist.scrollHeight;
+
+            // var chatlist = document.getElementById('body');
+            document.body.scrollTop = document.body.scrollHeight;
         }
     });
 });

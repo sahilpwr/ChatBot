@@ -16,12 +16,17 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
 <body>
+
 <div class="container clearfix">
     <div class="chat">
+
+         <div class="header-box">
+            <h1>KAMPS</h1>
+         </div>
+
         <div class="chat-history" id="msg-list-div" >
 
             <ul id="msg-list" class="chat-ul">
-                <li> <h2>KAMPS ~questions answered fast~ </h2></li>
                 {% for obj in chat %}
                     {% if obj.user == request.user %}
                         <li class="clearfix">
@@ -52,13 +57,12 @@
      <div class="chat-box">
          <form id="chat-form" method="post" action="/post/">
              <div id="chat-bottom" class="input-group">
-                 <input type="text" id="chat-msg" name="chat-msg" class="form-control"/>
-                 <span class="input-group-btn">
-                <input class="btn btn-default" id="send" type="submit" value="Send"/>
-            </span>
+                 <input style="font-size:20px" type="text" id="chat-msg" name="chat-msg" class="form-control"/>
+                    <span class="input-group-btn"><input class="btn btn-default" id="send" type="submit" value="Send"/></span>
              </div>
          </form>
      </div>
+
     </div> <!-- end chat -->
 </div>
 

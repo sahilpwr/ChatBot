@@ -3,15 +3,27 @@
 /*http://codepen.io/drehimself/pen/KdXwxR?utm_source=bypeople
 http://nicolasgallagher.com/pure-css-speech-bubbles/demo/*/
 
+
+.header-box{
+    position: fixed;
+    z-index: 1;
+    top: 0px;
+    width: 100%;
+    margin: 0px 0px;
+    background: #9ACD32;
+    border-radius: 0px;
+    height: 100px
+}
+
 *, *:before, *:after {
     box-sizing: border-box;
 }
 .chat .chat-history{
-    padding: 30px 30px 20px;
-    border-bottom: 2px solid white;
+    padding: 150px 150px 50px;
+    border-bottom: 50px solid white;
 }
 .chat .chat-history .message-data {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 .chat .chat-history .message-data-time {
     color: #39CCCC;
@@ -19,9 +31,9 @@ http://nicolasgallagher.com/pure-css-speech-bubbles/demo/*/
 }
 .chat .chat-history .message {
     color: white;
+    font-size: 20px;
     padding: 18px 20px;
     line-height: 26px;
-    font-size: 16px;
     border-radius: 5px;
     margin-bottom: 30px;
     width: 90%;
@@ -45,18 +57,31 @@ http://nicolasgallagher.com/pure-css-speech-bubbles/demo/*/
 .chat .chat-history .me-message {
     background: #E9724C;
 }
+
+/*Little triangle at top of other user*/
 .chat .chat-history .me-message:after {
     border-color: #E9724C transparent;
+    /*right: 20px;*/
+    top: -15px;
+    left: auto;
+    bottom:auto;
+}
+
+/*Little triangle at top of current user*/
+.chat .chat-history .you-message:after {
+    border-color: #39CCCC transparent;
     right: 20px;
     top: -15px;
     left: auto;
     bottom:auto;
 }
+
+
 .chat .chat-message {
     padding: 30px;
 }
 .chat .chat-message .fa-file-o, .chat .chat-message .fa-file-image-o {
-    font-size: 16px;
+    font-size: 20px;
     color: gray;
     cursor: pointer;
 }
@@ -87,27 +112,33 @@ http://nicolasgallagher.com/pure-css-speech-bubbles/demo/*/
 }
 .you {
     color:  #39CCCC;
+    font-size: 20px;
 }
 
 .me {
     color: #FF851B;
+    font-size: 20px;
 }
 
 h1, h2, h3, h4, h5, h6 {
+    color: white;
+    padding-left: 100px;
     font-family: "Raleway",sans-serif;
-    color: #003366;
 }
+
 
 #chat-msg {
     width: 90%;
-    margin: 20px 20px 20px 20px;
+    height: 50px;
+    margin: 25px 20px 20px 20px;
 }
 
 .chat-box{
     position: fixed;
     bottom: 0px;
-    width: 90%;
-    margin: 30px 30px;
+    width: 100%;
+    margin: 0px 0px;
     background: #9ACD32;
-    border-radius: 5px;
+    border-radius: 0px;
+    height: 100px
 }
