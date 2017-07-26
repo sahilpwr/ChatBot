@@ -44,8 +44,9 @@
                         <li class="float-right">No messages yet!</li>
                     {% endfor %}
                     <script>
-                        var chatlist = document.getElementById('msg-list-div');
-                        chatlist.scrollTop = chatlist.scrollHeight;
+{#                        var chatlist = document.getElementById('msg-list-div');#}
+{#                        chatlist.scrollTop = chatlist.scrollHeight;#}
+                        document.body.scrollTop = document.body.scrollHeight;
                     </script>
                 </ul>
 
