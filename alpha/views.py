@@ -4,6 +4,7 @@ from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from chat_app import settings
 
 from .models import Chat
+from .test import hello
 
 def Login(request):
     next = request.GET.get('next', '/home/')
@@ -32,16 +33,21 @@ def Home(request):
     return render(request, "beta/kamps.html", {'home': 'active', 'chat': c})
 
 def Post(request):
+
     if request.method == "POST":
         msg = request.POST.get('msgbox', None)
-        rly=request.POST.get('rlybox', None)
-        c = Chat(user=request.user, message=msg, reply=rly)
+        returner = hello(msg)
+        c = Chat(user=request.user, message=msg, reply=returner)
         if msg != '':
             c.save()
-        return JsonResponse({ 'msg': msg, 'user': c.user.username, 'rly':rly })
+        return JsonResponse({ 'msg': msg, 'user': c.user.username, 'rly':returner })
     else:
         return HttpResponse('Request must be POST.')
 
 def Messages(request):
     c = Chat.objects.all()
     return render(request, 'alpha/messages.html', {'chat': c})
+
+# def Tester(request):
+#     returner = hello()
+#     return JsonResponse({'tester':returner})

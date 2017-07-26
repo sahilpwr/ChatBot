@@ -23,6 +23,12 @@
             </div>
             <div class="chat-history" id="msg-list-div" >
                 <ul id="msg-list" class="chat-ul">
+                    <li class="clearfix">
+                                <div class="message-data">
+                                    <span class="message-data-name"><i class="fa fa-circle me"></i>KAMPS</span>
+                                </div>
+                                <div class="message me-message"> Hello, what can I do for you today? </div>
+                            </li>
                     {% for obj in chat %}
                         {% if obj.user == request.user %}
                             <li class="clearfix">
@@ -41,7 +47,7 @@
 
                         {% endif %}
                     {% empty %}
-                        <li class="float-right">No messages yet!</li>
+
                     {% endfor %}
                     <script>
 {#                        var chatlist = document.getElementById('msg-list-div');#}

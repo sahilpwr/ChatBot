@@ -1,21 +1,34 @@
 $('#chat-form').on('submit', function(event){
     event.preventDefault();
+
     reply="Let me think about it....";
+
+    // $.ajax({
+    //     url:'/tester/',
+    //     type:'Tester',
+    //
+    //     success: function(json){
+    //         $('#chat-msg').val('');
+    //         $('#msg-list').append('<li class="clearfix">');
+    //         $('#msg-list').append('<div class="message-data align-left"><span class="message-data-name"><i class="fa fa-circle me"></i>KAMPS</span></div>');
+    //         $('#msg-list').append('<div class="float-left message me-message">'+json.tester+'</div></li>');
+    //     }
+    //
+    // })
 
     $.ajax({
         url : '/post/',
         type : 'POST',
-        data : { msgbox : $('#chat-msg').val() , rlybox:reply},
+        data : { msgbox : $('#chat-msg').val()},
 
         success : function(json){
             $('#chat-msg').val('');
-            $('#msg-list').append('<link rel="stylesheet" href="kamps.css" >');
             $('#msg-list').append('<li class="clearfix"><div class="message-data align-right"><span class="message-data-name"><i class="fa fa-circle you"></i>'+json.user+'</span> </div>');
-            $('#msg-list').append('<div class="float-right message you-message">' + json.msg + '</div>'+'</li>');
-            //jump to back end
-            $('#msg-list').append('<li class="clearfix"><div class="message-data" ><span class="message-data-name" style="position:relative"><i class="fa fa-circle me"></i>KAMPS</span></div>'+'<div class="message me-message">'+json.rly+'</div></li>');
-            // $('#msg-list').append('<div class="message me-message">'+json.rly+'</div></li>');
-            // var chatlist = document.getElementById('body');
+            $('#msg-list').append('<div class="float-right message you-message">'+json.msg+'</div></li>');
+            $('#msg-list').append('<li class="clearfix">');
+            $('#msg-list').append('<div class="message-data align-left"><span class="message-data-name"><i class="fa fa-circle me"></i>KAMPS</span></div>');
+            $('#msg-list').append('<div class="float-left message me-message">'+json.rly+'</div></li>');
+
             document.body.scrollTop = document.body.scrollHeight;
         }
     });

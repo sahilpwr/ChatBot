@@ -9,4 +9,5 @@ urlpatterns = [
 
     url(r'^post/$', views.Post, name='post'),
     url(r'^messages/$', views.Messages, name='messages'),
+    # url(r'^tester/$', views.Tester, name='tester'),
 ]
