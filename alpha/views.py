@@ -6,6 +6,7 @@ from chat_app import settings
 from .models import Chat
 from .test import hello
 from datetime import datetime
+# import moment
 
 def Login(request):
     next = request.GET.get('next', '/home/')
@@ -38,11 +39,13 @@ def Post(request):
     if request.method == "POST":
         msg = request.POST.get('msgbox', None)
         returner = hello(msg)
-        now=datetime.now()
-        c = Chat(user=request.user, message=msg, reply=returner,created=now)
+        now=datetime.today()
+        nowC= datetime.strftime(now,"%B %d, %Y, %I:%M %P")
+
+        c = Chat(user=request.user, message=msg, reply=returner, created=now)
         if msg != '':
             c.save()
-        return JsonResponse({ 'msg': msg, 'user': c.user.username, 'rly':returner, 'timestamp':c.created })
+        return JsonResponse({ 'msg': msg, 'user': c.user.username, 'rly':returner, 'created':nowC })
     else:
         return HttpResponse('Request must be POST.')
 
