@@ -1,8 +1,21 @@
+{% load staticfiles %}
+
+
+<link rel="stylesheet" href="{% static 'login.css' %}">
+<script src="{% static 'login.js' %}"></script>
+<body id="bg">
 <form method="post" action=".">
     {% csrf_token %}
+    <div class="signin">
+        <input type="text" name="username" placeholder="username" class="username_password"/>
+        <input type="password" name="password" placeholder="password" class="username_password"/>
+        <input type="submit" value="Login" class="login"/>
+    </div>
+    <h1>
+        <a href="" class="typewrite" data-period="2000" data-type='[ "Welcome to KAMPS! ","I am your Duetsche Bank ChatBot.", "I Love to Help."]'>
+            <span class="wrap"></span>
+        </a>
+    </h1>
 
-    <input type="text" name="username"/>
-    <input type="password" name="password"/>
-
-    <input type="submit" value="Login"/>
 </form>
+    </body>

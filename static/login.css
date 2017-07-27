@@ -1,0 +1,36 @@
+body {
+    /*background-color:blue;*/
+    text-align: center;
+    color:#fff;
+    padding-top:10em;
+    background-image: url('../static/img/background.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color:black;
+}
+
+.signin{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 50px;
+    margin: auto;
+}
+.username_password{
+    width: 150px;
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+.login{
+    width: 80px;
+    height: 30px;
+    margin-left: 30px;
+
+}
+.typewrite{
+    color: #fff;
+}
