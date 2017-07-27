@@ -1,15 +1,37 @@
 {% load staticfiles %}
 
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+    <script src="{% static 'login.js' %}"></script>
+</head>
 
-<link rel="stylesheet" href="{% static 'login.css' %}">
-<script src="{% static 'login.js' %}"></script>
-<body id="bg">
+
+<body>
 <form method="post" action=".">
     {% csrf_token %}
     <div class="signin">
-        <input type="text" name="username" placeholder="username" class="username_password"/>
-        <input type="password" name="password" placeholder="password" class="username_password"/>
-        <input type="submit" value="Login" class="login"/>
+        <div  class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input type="text" name="username" placeholder="username" id="login-username" type="text" class="form-control"/>
+        </div>
+
+        <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+            <input id="login-password" type="password" class="form-control" name="password" placeholder="password">
+        </div>
+
+        <div class="col-sm-12 controls login" >
+                <input id="btn-login" class="btn btn-success" type="submit" value="Login">
+        </div>
+        <!--<input type="text" name="username" placeholder="username" class="username_password"/>-->
+        <!--<input type="password" name="password" placeholder="password" class="username_password"/>-->
+        <!--<input type="submit" value="Login" class="login"/>-->
     </div>
     <h1>
         <a href="" class="typewrite" data-period="2000" data-type='[ "Welcome to KAMPS! ","I am your Duetsche Bank ChatBot.", "I Love to Help."]'>

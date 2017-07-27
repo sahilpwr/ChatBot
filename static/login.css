@@ -16,13 +16,13 @@ body {
     top:0;
     bottom: 0;
     left: 0;
-    right: 50px;
+    right: 60px;
     margin: auto;
 }
-.username_password{
+.input-group{
     width: 150px;
     height: 30px;
-    margin-bottom: 10px;
+    margin-bottom: 25px;
 }
 
 .login{
