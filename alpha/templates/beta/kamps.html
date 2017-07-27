@@ -26,7 +26,7 @@
                     <li class="clearfix">
                                 <div class="message-data">
                                     <img src="{% static '/img/deustche_bank_avatar.png' %}" alt="db" class="avatar" />
-                                    <span class="message-data-name"><i class="fa fa-circle me"></i> KAMPS </span>
+                                    <span class="message-data-name"> KAMPS </span>
                                 </div>
                                 <div class="message me-message"> Hello, what can I do for you today? </div>
                             </li>
@@ -34,7 +34,7 @@
                         {% if obj.user == request.user %}
                             <li class="clearfix">
                                 <div class="message-data align-right">
-                                    <span class="message-data-name"><i class="fa fa-circle you"></i> {{ obj.user }} </span>
+                                    <span class="message-data-name">{{ obj.user }} </span>
                                     <img src="{% static '/img/user_avatar.jpg' %}" alt="user" class="avatar"/>
                                  </div>
                                 <div class="float-right message you-message">{{ obj.message }}</div>
@@ -43,7 +43,7 @@
                             <li class="clearfix">
                                 <div class="message-data">
                                     <img src="{% static '/img/deustche_bank_avatar.png' %}" alt="db" class="avatar" />
-                                    <span class="message-data-name"><i class="fa fa-circle me"></i> KAMPS </span>
+                                    <span class="message-data-name"> KAMPS </span>
                                 </div>
                                 <div class="message me-message">{{ obj.reply }}</div>
                             </li>
