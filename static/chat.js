@@ -1,3 +1,4 @@
+
 $('#chat-form').on('submit', function(event){
     event.preventDefault();
 
@@ -22,10 +23,10 @@ $('#chat-form').on('submit', function(event){
 
         success : function(json){
             $('#chat-msg').val('');
-            $('#msg-list').append('<li class="clearfix"><div class="message-data align-right"><span class="message-data-name">'+ json.user +'</span> <img src="/static/img/user_avatar.jpg" alt="user" class="avatar"/></div>');
+            $('#msg-list').append('<li class="clearfix"><span class="message-data-name">'+json.timestamp+'</span><div class="message-data align-right"><span class="message-data-name">'+ json.user +'</span> <img src="/static/img/user_avatar.jpg" alt="user" class="avatar"/></div>');
             $('#msg-list').append('<div class="float-right message you-message">'+json.msg+'</div></li>');
             $('#msg-list').append('<li class="clearfix">');
-            $('#msg-list').append('<div class="message-data align-left">'+'<img src="/static/img/deustche_bank_avatar.png" alt="db" class="avatar" />'+' <span class="message-data-name"> KAMPS </span></div>');
+            $('#msg-list').append('<div class="message-data align-left">'+'<img src="/static/img/deustche_bank_avatar.png" alt="db" class="avatar" />'+' <span class="message-data-name"> KAMPS </span></div><span class="message-data-name">'+json.timestamp+'</span>');
             $('#msg-list').append('<div class="float-left message me-message">'+json.rly+'</div></li>');
 
             document.body.scrollTop = document.body.scrollHeight;
