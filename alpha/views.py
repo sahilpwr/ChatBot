@@ -4,9 +4,8 @@ from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from chat_app import settings
 
 from .models import Chat
-from .test import hello
+from .KAMPS import KAMPS
 from datetime import datetime
-# import moment
 
 def Login(request):
     next = request.GET.get('next', '/home/')
@@ -38,7 +37,7 @@ def Post(request):
 
     if request.method == "POST":
         msg = request.POST.get('msgbox', None)
-        returner = hello(msg)
+        returner = KAMPS(msg)
         now=datetime.today()
         nowC= datetime.strftime(now,"%B %d, %Y, %I:%M %P")
 

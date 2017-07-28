@@ -47,8 +47,8 @@ def KAMPS(question):
 
 
     f=[]
-    doc=['person.txt','team.txt','software-support-team.txt','topics.txt']
-    dataset=[['person.txt',"people-team-location"],['team.txt',"team-location"],['software-support-team.txt',"support-team-people"],['topics.txt',"topic-team"]]
+    doc=['.\\textfiles\\person.txt','.\\textfiles\\team.txt','.\\textfiles\\topics.txt']
+    dataset=[['.\\textfiles\\person.txt',"people-team-location"],['.\\textfiles\\team.txt',"team-location"],['.\\textfiles\\topics.txt',"topic-team"]]
     for x in doc:
 	    f.append(open(x,'r').read())
 
@@ -233,10 +233,10 @@ def KAMPS(question):
 
     g = Graph()
 
-    file1=open("C:\\Users\\Owner\\Desktop\\Chatbot\\people.txt",'r+')
-    file2=open("C:\\Users\\Owner\\Desktop\\Chatbot\\team.txt",'r+')
-    file3=open("C:\\Users\\Owner\\Desktop\\Chatbot\\location.txt",'r+')
-    file4=open("C:\\Users\\Owner\\Desktop\\Chatbot\\topics.txt",'r+')
+    file1=open(".\\textfiles\\people_db.txt",'r+')
+    file2=open(".\\textfiles\\team_db.txt",'r+')
+    file3=open(".\\textfiles\\location_db.txt",'r+')
+    file4=open(".\\textfiles\\topics_db.txt",'r+')
 
     person=[]
     team=[]

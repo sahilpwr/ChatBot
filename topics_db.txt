@@ -1,5 +1,0 @@
-101,Java
-102,Spring
-103,Angular.js
-104,C++
-105,Machine Learning
