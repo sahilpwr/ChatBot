@@ -215,5 +215,8 @@ h1, h2, h3, h4, h5, h6 {
 body{
     /*background-image: url("../static/img/chat-background.png");*/
     background-image: url("../static/img/city5.jpg");
+    /*background-repeat: no-repeat; */
+    background-attachment: fixed;
+    /*background-position: center; */
 
 }
