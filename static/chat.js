@@ -13,7 +13,7 @@ $('#chat-form').on('submit', function(event){
             $('#msg-list').append('<li class="clearfix">' +
                 '<div class="message-data align-right">' +
                     '<span class="message-data-name">'+json.user+'</span>' +
-                    '<img src="/static/img/user_avatar.jpg" alt="user" class="avatar"/>' +
+                    '<img src="/static/img/user.png" alt="user" class="avatar"/>' +
                 '</div>' +
                 '<div class="float-right message you-message">' +
                     '<div>'+json.msg+'</div>'+

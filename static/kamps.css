@@ -9,10 +9,10 @@ http://nicolasgallagher.com/pure-css-speech-bubbles/demo/*/
     z-index: 1;
     top: 0px;
     width: 100%;
-    margin: -5px -5px -5px -7px;
+    margin: -5px -8px -5px -8px;
     background: darkblue;
     border-radius: 0px;
-    height: 100px
+    height: 65px
 }
 
 *, *:before, *:after {
@@ -161,21 +161,59 @@ h1, h2, h3, h4, h5, h6 {
 
 #chat-msg {
     width: 90%;
-    height: 50px;
-    margin: 25px 20px 20px 20px;
+    height: 40px;
+    margin: 25px 10px 20px 20px;
+    border-radius: 5px;
+    float:left;
 }
 
 .chat-box{
     position: fixed;
     bottom: 0px;
     width: 100%;
-    margin: -5px -5px -5px -7px;
+    margin: -5px -7px -5px -8px;
     background: darkblue;
     border-radius: 0px;
     height: 100px
 }
 
+
+#wrapper{
+    padding: 0px 50px 50px 50px;
+    /*background-color: #d7e9f1;*/
+}
+
+#msg-list{
+    margin-top:-60px;
+
+}
+
 .avatar{
     width:25px;
     height:25px;
+}
+
+.avatar_user{
+    width:35px;
+    height:35px;
+}
+
+.airplane{
+    margin-top: 22px;
+    width:40px;
+    height:40px;
+
+}
+
+#chatbot{
+    margin: 15px 0 0 30px;
+    height:40px;
+    width:50px;
+    float: left;
+}
+
+body{
+    /*background-image: url("../static/img/chat-background.png");*/
+    background-image: url("../static/img/city5.jpg");
+
 }
