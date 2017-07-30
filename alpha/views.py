@@ -38,10 +38,10 @@ def Post(request):
     if request.method == "POST":
         msg = request.POST.get('msgbox', None)
         returner = KAMPS(msg)
-        now=datetime.today()
-        nowC= datetime.strftime(now,"%B %d, %Y, %I:%M %P")
+        nowC=datetime.today()
+        #nowC= datetime.strftime(now,"%B %d, %Y, %I:%M %P")
 
-        c = Chat(user=request.user, message=msg, reply=returner, created=now)
+        c = Chat(user=request.user, message=msg, reply=returner, created=nowC)
         if msg != '':
             c.save()
         return JsonResponse({ 'msg': msg, 'user': c.user.username, 'rly':returner, 'created':nowC })

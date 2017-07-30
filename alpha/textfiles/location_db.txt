@@ -1,5 +1,5 @@
-1st Floor,Bldg:3000;Chief Technology Office
-2nd Floor,Bldg:3000;Survillance Team
-3rd Floor,Bldg:1000;Packaging Team
-1st Floor,Bldg:4000;Credit
-2nd Floor,Bldg:3000;Wealth Management
+1st Floor, Bldg: 3000;Chief Technology Office
+2nd Floor, Bldg: 3000;Survillance
+3rd Floor, Bldg: 1000;Packaging
+1st Floor, Bldg: 4000;Credit
+2nd Floor, Bldg: 3000;Wealth Management

@@ -6,3 +6,5 @@ How can I get connected with Spring team?
 Does DB have machine learning?
 Can I learn about machine learning?
 Is there a team that works on Java?
+which team works on Java?
+which team works on Angulsr.js
