@@ -35,6 +35,7 @@ $('#chat-form').on('submit', function(event){
     });
 });
 
+
 // function getMessages(){
 //     if (!scrolling) {
 //         $.get('/messages/', function(messages){
@@ -63,6 +64,10 @@ $(document).ready(function() {
         else {
         $('#send').attr('disabled','disabled');
         }
+     });
+     $('#logout').click(function(){
+
+         document.location.href ="logout";
      });
  });
 

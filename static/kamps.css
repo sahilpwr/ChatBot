@@ -20,7 +20,7 @@ http://nicolasgallagher.com/pure-css-speech-bubbles/demo/*/
 }
 .chat .chat-history{
     padding: 150px 150px 50px;
-    border-bottom: 50px solid white;
+    /*border-bottom: 50px solid white;*/
 }
 .chat .chat-history .message-data {
     margin-bottom: 15px;
@@ -210,6 +210,11 @@ h1, h2, h3, h4, h5, h6 {
     height:40px;
     width:50px;
     float: left;
+}
+
+#logout{
+    margin-top: -50px;
+    float:right;
 }
 
 body{
