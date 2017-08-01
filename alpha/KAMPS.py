@@ -9,6 +9,8 @@ from six import iteritems
 from nltk.corpus import stopwords
 from nltk.tokenize import *
 
+logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
+TEMP_FOLDER = tempfile.gettempdir()
 
 def software(question):
     logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
@@ -81,27 +83,18 @@ def software(question):
     sims = index[vec_lsi]
     sims = sorted(enumerate(sims), key=lambda item:-item[1])
     match=sims[0][0]
-    answer = nltk.sent_tokenize(answer_lines[match])
-    if (len(answer)<2):
-        for line in answer:
-            time.sleep(3)
-            print(line)
-        return line
-    else:
-        time.sleep(3)
-        print(answer[0])
-        time.sleep(3)
-        system.stdout.write(answer[1]+'...'+'\n')
-        user_response=input("Is this answer relevant?(yes/no)")
-        if (user_response=='yes'):
-            time.sleep(3)
-            print('Great! Here is the rest of the answer:')
-            for i in range(2, len(answer)):
-                time.sleep(3)
-                print(answer[1])
-        else:
-            print('Sorry. You will need to ask someone else.')
-        return answer[1]
+    answer = answer_lines[match]
+    
+    return answer
+
+
+
+
+
+
+
+
+
 
 def KAMPS(question):
             
@@ -149,7 +142,7 @@ def KAMPS(question):
                     val=val+pow(caltfidf(x,doc),2)
                 return sqrt(val)
 
-
+            #reading the dataset
             f=[]
             doc=['C:\\Users\\Owner\\Downloads\\ChatBot\\ChatBot-master\\alpha\\textfiles\\person.txt','C:\\Users\\Owner\\Downloads\\ChatBot\\ChatBot-master\\alpha\\textfiles\\team.txt','C:\\Users\\Owner\\Downloads\\ChatBot\\ChatBot-master\\alpha\\textfiles\\topics.txt','C:\\Users\\Owner\\Downloads\\ChatBot\\ChatBot-master\\alpha\\textfiles\\software.txt']
             dataset=[['C:\\Users\\Owner\\Downloads\\ChatBot\\ChatBot-master\\alpha\\person.txt',"people-team-location"],['C:\\Users\\Owner\\Downloads\\ChatBot\\ChatBot-master\\alpha\\textfiles\\team.txt',"team-location"],['C:\\Users\\Owner\\Downloads\\ChatBot\\ChatBot-master\\alpha\\textfiles\\topics.txt',"topic-team"],['C:\\Users\\Owner\\Downloads\\ChatBot\\ChatBot-master\\alpha\\textfiles\\software.txt',"software-team"]]
@@ -187,7 +180,7 @@ def KAMPS(question):
             top_k[:] = (x for x in top_k if x[2] != 0)
 
             if len(top_k)== 0:
-                print(classification)
+                #print(classification)
                 return 'Didn\'t understand your question. Can you ask questions related to team,people or location?'
             else:
                 class_counts=Counter(category for (document,category,value) in top_k)
@@ -197,7 +190,7 @@ def KAMPS(question):
                 print( 'Class of test file is : ',classification)
 
             classification_list=classification.split("-")
-            print(classification.split("-"))
+            print('\nPath to be traversed in Knowledge Graph:',classification.split("-"))
 
 
             if(classification_list[0]=='software'):
@@ -212,7 +205,7 @@ def KAMPS(question):
             for temp in classification_list:
                 queue.append(map[temp])
 
-            print(queue)
+            print('\nTraversal path for Knowledge Graph:',queue)
             #identification of names, location, team and topics
             Names=[]
             Value=[]
@@ -223,7 +216,7 @@ def KAMPS(question):
                 tagged = nltk.pos_tag(words)
 
 
-                chunkGram = r"""Chunk: {<NNP.?>*<JJ.?>*}"""
+                chunkGram = r"""Chunk: {<VBG.?>*<NNP.?>*<JJ.?>*}"""
                 chunkParser = nltk.RegexpParser(chunkGram)
                 chunked = chunkParser.parse(tagged)
                 print(chunked)
@@ -299,7 +292,7 @@ def KAMPS(question):
                     self.hashTable=[]
                     self.hashTable=hash
                     self.connectedTo = {} 
-                    print(self.hashTable)
+                    #print(self.hashTable)
 
                 def addNeighbor(self,nbr,weight):
                     self.connectedTo[nbr] = weight
@@ -366,6 +359,8 @@ def KAMPS(question):
             g.addVertex(1,team)
             g.addVertex(2,location)
             g.addVertex(3,topics)
+
+            print('\n Knowledge Graph constructed- 0:Person, 1:Team 2:Location 3:Topic')
 
             g.addEdge(0,1,1)
             g.addEdge(1,0,1)
@@ -471,9 +466,11 @@ def KAMPS(question):
                         i=i+1
 
 
-            template={'people-team-location':'Name who works with team sits on location','team-location':'team sits on location. Can I help anything else with you?','topic-team':'Well, team works mainly on topic'}
-            print(answer)
-            print(Value)
+            template={'people-team-location':'Name who works with team sits at location','team-location':'team sits on location. Can I help anything else with you?','topic-team':'Well, team works mainly on topic'}
+          
+            print('\nSearched in Knowledge Graph for:',Value)
+            print('\nFound',answer)
+
             finalAnswer=''
             print('Count',len(answer))
             if(len(answer)!=0):
@@ -494,7 +491,7 @@ def KAMPS(question):
                          finalAnswer=finalAnswer.replace('team',answer[1])
                          finalAnswer=finalAnswer.replace('topic',Value[0])
                 print(finalAnswer)
-            else:
+            elif(len(answer)==0):
                 finalAnswer= 'Didn\'t understand your question. Can you ask questions related to team,people or location?'
             
             return finalAnswer
