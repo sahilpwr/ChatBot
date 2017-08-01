@@ -23,7 +23,7 @@ http://nicolasgallagher.com/pure-css-speech-bubbles/demo/*/
     /*border-bottom: 50px solid white;*/
 }
 .chat .chat-history .message-data {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 .chat .chat-history .message-data-time {
     color: black;
@@ -38,10 +38,10 @@ http://nicolasgallagher.com/pure-css-speech-bubbles/demo/*/
 .chat .chat-history .message {
     color: white;
     font-size: 20px;
-    padding: 20px 15px 5px;
+    padding: 20px 15px 10px;
     line-height: 15px;
     border-radius: 5px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     width: 90%;
     position: relative;
 }
@@ -77,12 +77,14 @@ http://nicolasgallagher.com/pure-css-speech-bubbles/demo/*/
     background:  royalblue;
     color:#FFFFFF;
     padding-left: 20px;
-    word-wrap: break-word
+    word-wrap: break-word;
+    line-height: 25px;
 }
 .chat .chat-history .me-message {
     background: lightslategrey;
     padding-left: 20px;
-    word-wrap: break-word
+    word-wrap: break-word;
+    line-height: 25px;
 }
 
 /*Little triangle at top of other user*/
@@ -199,7 +201,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .airplane{
-    margin-top: 25px;
+    margin-top: 22px;
     width:40px;
     height:40px;
 
