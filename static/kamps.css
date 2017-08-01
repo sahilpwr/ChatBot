@@ -9,10 +9,10 @@ http://nicolasgallagher.com/pure-css-speech-bubbles/demo/*/
     z-index: 1;
     top: 0px;
     width: 100%;
-    margin: 0px 0px;
-    background: #9ACD32;
+    margin: -5px -8px -5px -8px;
+    background: darkblue;
     border-radius: 0px;
-    height: 100px
+    height: 65px
 }
 
 *, *:before, *:after {
@@ -23,22 +23,45 @@ http://nicolasgallagher.com/pure-css-speech-bubbles/demo/*/
     border-bottom: 50px solid white;
 }
 .chat .chat-history .message-data {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 .chat .chat-history .message-data-time {
-    color: #39CCCC;
-    padding-left: 6px;
+    color: black;
+    padding-left: 0px;
+}
+.message-data-time{
+    /*color: #39CCCC;*/
+    font-size: small;
+    float: right;
+    padding-right: 0%;
 }
 .chat .chat-history .message {
     color: white;
     font-size: 20px;
-    padding: 18px 20px;
-    line-height: 26px;
+    padding: 20px 15px 5px;
+    line-height: 15px;
     border-radius: 5px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     width: 90%;
     position: relative;
 }
+
+.legend{
+    padding-bottom: 18px;
+}
+
+/*.chat .chat-history .message{*/
+    /*color: white;*/
+    /*font-size: 20px;*/
+    /*padding-left: 0%;*/
+    /*padding-right: 5%;*/
+    /*!*padding: 18px 20px;*!*/
+    /*line-height: 26px;*/
+    /*border-radius: 5px;*/
+    /*margin-bottom: 30px;*/
+    /*width: 90%;*/
+    /*position: relative;*/
+/*}*/
 .chat .chat-history .message:after {
     content: "";
     position: absolute;
@@ -51,34 +74,39 @@ http://nicolasgallagher.com/pure-css-speech-bubbles/demo/*/
     width: 0;
 }
 .chat .chat-history .you-message {
-    background: #39CCCC;
+    background:  royalblue;
     color:#FFFFFF;
+    padding-left: 20px;
+    word-wrap: break-word
 }
 .chat .chat-history .me-message {
-    background: #E9724C;
+    background: lightslategrey;
+    padding-left: 20px;
+    word-wrap: break-word
 }
 
 /*Little triangle at top of other user*/
 .chat .chat-history .me-message:after {
-    border-color: #E9724C transparent;
-    /*right: 20px;*/
+    border-color: lightslategray transparent;
+    /*right: 100px;*/
     top: -15px;
-    left: auto;
+    left: 20px;
     bottom:auto;
 }
 
 /*Little triangle at top of current user*/
 .chat .chat-history .you-message:after {
-    border-color: #39CCCC transparent;
+    border-color: royalblue transparent;
     right: 20px;
     top: -15px;
     left: auto;
-    bottom:auto;
+    /*bottom:auto;*/
+
 }
 
 
 .chat .chat-message {
-    padding: 30px;
+    padding: 0px;
 }
 .chat .chat-message .fa-file-o, .chat .chat-message .fa-file-image-o {
     font-size: 20px;
@@ -100,6 +128,10 @@ http://nicolasgallagher.com/pure-css-speech-bubbles/demo/*/
 
 .float-right {
     float: right;
+}
+
+float-left{
+    float: left;
 }
 
 .clearfix:after {
@@ -129,21 +161,62 @@ h1, h2, h3, h4, h5, h6 {
 
 #chat-msg {
     width: 90%;
-    height: 50px;
-    margin: 25px 20px 20px 20px;
+    height: 40px;
+    margin: 25px 10px 20px 20px;
+    border-radius: 5px;
+    float:left;
 }
 
 .chat-box{
     position: fixed;
     bottom: 0px;
     width: 100%;
-    margin: 0px 0px;
-    background: #9ACD32;
+    margin: -5px -7px -5px -8px;
+    background: darkblue;
     border-radius: 0px;
     height: 100px
+}
+
+
+#wrapper{
+    padding: 0px 50px 50px 50px;
+    background-color: #FFFFFF;
+}
+
+#msg-list{
+    margin-top:-60px;
+
 }
 
 .avatar{
     width:25px;
     height:25px;
+}
+
+.avatar_user{
+    width:35px;
+    height:35px;
+}
+
+.airplane{
+    margin-top: 25px;
+    width:40px;
+    height:40px;
+
+}
+
+#chatbot{
+    margin: 15px 0 0 30px;
+    height:40px;
+    width:50px;
+    float: left;
+}
+
+body{
+    /*background-image: url("../static/img/chat-background.png");*/
+    background-image: url("../static/img/city5.jpg");
+    /*background-repeat: no-repeat; */
+    background-attachment: fixed;
+    /*background-position: center; */
+
 }

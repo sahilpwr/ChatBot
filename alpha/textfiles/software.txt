@@ -1,0 +1,18 @@
+How do I remove all Sprint related info from an issue
+How do I add a Sprint marker
+How do I hide epics which are not planned for a selected version
+Can I make use of more than one Estimation Statistic for my Burndown Chart report
+How do I configure the Story Points field to be displayed in my Scrum board
+How do I hide custom fields from showing up in the Issue Detail View
+How do I set default values for Story Points when adding a new issue to Sprint
+How do I sort the backlog
+How do I remove a closed story from an Epic
+Why do subtasks disappear when I filter my board using Epic Links
+How do Story Points get burnt down and reflected on the Burndown Chart
+How to display the Sprint field in the quick Issue Detail View in Plan mode of Agile scrum board
+How can I resize the Issue Detail View in Work Mode
+How do I setup JIRA and JIRA Agile for the Scaled Agile Framework?
+Can I still upgrade JIRA Agile if my JIRA license is already expired
+What if the JIRA Agile license count does not match with JIRA licensing
+What are the permissions used in Agile Boards
+Can I edit the Estimation Statistic when the Sprint has already started

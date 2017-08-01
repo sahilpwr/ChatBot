@@ -17,7 +17,7 @@ class Migration(migrations.Migration):
             name='Chat',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('created', models.DateTimeField(default=datetime.date.today,blank=True, null=True)),
+                ('created', models.DateTimeField(default=datetime.datetime.today,blank=True, null=True)),
                 ('message', models.CharField(max_length=200)),
                 ('user', models.ForeignKey(to=settings.AUTH_USER_MODEL)),
             ],

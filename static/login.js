@@ -1,4 +1,4 @@
-//made by vipul mirajkar thevipulm.appspot.com
+//made by vipul mirajkar thevipulm.appspot.comFangbing Luo
 var TxtType = function(el, toRotate, period) {
     this.toRotate = toRotate;
     this.el = el;
