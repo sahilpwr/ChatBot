@@ -20,7 +20,7 @@ http://nicolasgallagher.com/pure-css-speech-bubbles/demo/*/
 }
 .chat .chat-history{
     padding: 150px 150px 50px;
-    border-bottom: 50px solid white;
+    /*border-bottom: 50px solid white;*/
 }
 .chat .chat-history .message-data {
     margin-bottom: 20px;
@@ -77,12 +77,14 @@ http://nicolasgallagher.com/pure-css-speech-bubbles/demo/*/
     background:  royalblue;
     color:#FFFFFF;
     padding-left: 20px;
-    word-wrap: break-word
+    word-wrap: break-word;
+    line-height: 25px;
 }
 .chat .chat-history .me-message {
     background: lightslategrey;
     padding-left: 20px;
-    word-wrap: break-word
+    word-wrap: break-word;
+    line-height: 25px;
 }
 
 /*Little triangle at top of other user*/
